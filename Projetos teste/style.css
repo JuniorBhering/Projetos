@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  margin: 25px;
+}
+
+.digitartexto {
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
+
+.adicionar {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  margin-right: 390px;
+  position: relative;
+  margin-top: 10px;
+}
+.remover {
+  text-align: center;
+  margin-left: 390px;
+  position: relative;
+  top: -21px;
+}
+
+.principal {
+  text-align: center;
+  margin: auto;
+  margin-top: 35px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
