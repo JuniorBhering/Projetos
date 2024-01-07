@@ -86,4 +86,5 @@ img {
 
 .invalid::placeholder {
   color: red;
+  font-weight: bold;
 }
