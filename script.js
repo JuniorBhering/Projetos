@@ -2,19 +2,20 @@ const buttonClear = document.querySelector("#button-Clear");
 const buttonAdd = document.querySelector("#buttonAdd"); // Botão que adiciona a tarefa
 const input = document.querySelector(".input-task"); // Input que a pessoa digita
 const htmlList = document.querySelector(".task-list"); // lista de tarefas
-const invalidInput = document.querySelector("#todoInput")
+const invalidInput = document.querySelector("#todoInput");
 let listOfTasks = [];
 
 function addTask() {
   const taskValue = input.value.trim();
-  if (taskValue.length !== 0) {
+  if (taskValue.length !== 0 && taskValue.length < 20) {
     listOfTasks.push({ task: taskValue, done: false });
     input.value = "";
     showTask();
     invalidInput.classList.remove("invalid");
     invalidInput.placeholder = "What I have to do?";
   } else {
-    invalidInput.placeholder = 'Invalid Input'
+    input.value = ''
+    invalidInput.placeholder = "Invalid Input";
     invalidInput.classList.add("invalid");
   }
 }
@@ -49,7 +50,12 @@ function showTask() {
 }
 
 buttonAdd.addEventListener("click", addTask);
-buttonClear.addEventListener("click", clearTasks);
+buttonClear.addEventListener("click", function () {
+  clearTasks();
+  input.value = "";
+  invalidInput.classList.remove("invalid");
+  invalidInput.placeholder = "What I have to do?";
+});
 input.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     addTask();
