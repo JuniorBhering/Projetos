@@ -1,7 +1,8 @@
 const buttonClear = document.querySelector("#button-Clear");
 const buttonAdd = document.querySelector("#buttonAdd"); // Botão que adiciona a tarefa
 const input = document.querySelector(".input-task"); // Input que a pessoa digita
-const htmlList = document.querySelector(".task-list");
+const htmlList = document.querySelector(".task-list"); // lista de tarefas
+const invalidInput = document.querySelector("#todoInput")
 let listOfTasks = [];
 
 function addTask() {
@@ -10,8 +11,11 @@ function addTask() {
     listOfTasks.push({ task: taskValue, done: false });
     input.value = "";
     showTask();
+    invalidInput.classList.remove("invalid");
+    invalidInput.placeholder = "What I have to do?";
   } else {
-    window.alert("Please enter a valid input");
+    invalidInput.placeholder = 'Invalid Input'
+    invalidInput.classList.add("invalid");
   }
 }
 
