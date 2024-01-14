@@ -41,9 +41,9 @@ function showTask() {
   listOfTasks.forEach((task, index) => {
     addOnList += `<li class="task ${task.done ? "done" : ""}">
               <!--LI é cada elemto da lista-->
-              <img src="./img/checked.png" alt="" onclick="markAsCompleted(${index})" />
+              <img src="https://w7.pngwing.com/pngs/442/190/png-transparent-computer-icons-check-mark-others-cdr-angle-text-thumbnail.png" alt="" onclick="markAsCompleted(${index})" />
               <p>${task.task}</p>
-              <img src="./img/cancel.png" alt="" onclick="removeItem(${index})" />
+              <img src="https://w7.pngwing.com/pngs/723/887/png-transparent-computer-icons-x-mark-check-mark-red-x-miscellaneous-text-trademark-thumbnail.png" alt="" onclick="removeItem(${index})" />
               </li>`;
   });
   htmlList.innerHTML = addOnList;
