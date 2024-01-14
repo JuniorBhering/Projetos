@@ -7,14 +7,20 @@ let listOfTasks = [];
 
 function addTask() {
   const taskValue = input.value.trim();
-  if (taskValue.length !== 0 && taskValue.length < 20) {
+  const alphanumericRegex = /^[a-zA-Z0-9]+$/;
+
+  if (
+    taskValue.length !== 0 &&
+    taskValue.length < 20 &&
+    alphanumericRegex.test(taskValue)
+  ) {
     listOfTasks.push({ task: taskValue, done: false });
     input.value = "";
     showTask();
     invalidInput.classList.remove("invalid");
     invalidInput.placeholder = "What I have to do?";
   } else {
-    input.value = ''
+    input.value = "";
     invalidInput.placeholder = "Invalid Input";
     invalidInput.classList.add("invalid");
   }
